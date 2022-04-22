@@ -27,10 +27,23 @@ overlay.addEventListener('click', closeModal);
 // creating a event listener for escape keydown
 document.addEventListener('keydown', function (e) {
   // the bellow is used as to identify the key pressed
+
   // console.log(e.key);
-  if (e.key === 'Escape') {
-    if (!modal.classList.contains('.hidden')) {
-      closeModal();
-    }
-  }
+
+  // if (e.key === 'Escape') {
+  //   if (!modal.classList.contains('.hidden')) {
+  //     closeModal();
+  //   }
+  // }
+
+  // refratoring
+  // Option 1
+  e.key === 'Escape' && !modal.classList.contains('.hidden')
+    ? true
+    : closeModal();
+
+  // Option 2
+  // if (e.key === 'Escape' && !modal.classList.contains('.hidden')) {
+  //   closeModal();
+  // }
 });
